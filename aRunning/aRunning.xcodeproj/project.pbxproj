@@ -245,15 +245,12 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Shinya Hirai";
 				TargetAttributes = {
-					656C141B18BF86640056D384 = {
-						DevelopmentTeam = N5K8G7XZX2;
-					};
 					656C143F18BF86640056D384 = {
 						TestTargetID = 656C141B18BF86640056D384;
 					};
 				};
 			};
-			buildConfigurationList = 656C141718BF86640056D384 /* Build configuration list for PBXProject "aRun" */;
+			buildConfigurationList = 656C141718BF86640056D384 /* Build configuration list for PBXProject "aRunning" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -441,7 +438,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aRunning/aRunning-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/aRunning/aRunning-Info.plist";
@@ -455,7 +451,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aRunning/aRunning-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/aRunning/aRunning-Info.plist";
@@ -509,7 +504,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		656C141718BF86640056D384 /* Build configuration list for PBXProject "aRun" */ = {
+		656C141718BF86640056D384 /* Build configuration list for PBXProject "aRunning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				656C144F18BF86640056D384 /* Debug */,

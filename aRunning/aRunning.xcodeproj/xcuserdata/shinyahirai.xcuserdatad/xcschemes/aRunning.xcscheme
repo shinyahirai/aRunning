@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "656C141B18BF86640056D384"
-               BuildableName = "aRunning.app"
+               BuildableName = "BeatRun.app"
                BlueprintName = "aRunning"
-               ReferencedContainer = "container:aRun.xcodeproj">
+               ReferencedContainer = "container:aRunning.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "656C143F18BF86640056D384"
-               BuildableName = "aRunningTests.xctest"
+               BuildableName = "BeatRunTests.xctest"
                BlueprintName = "aRunningTests"
-               ReferencedContainer = "container:aRun.xcodeproj">
+               ReferencedContainer = "container:aRunning.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "aRunning.app"
+            BuildableName = "BeatRun.app"
             BlueprintName = "aRunning"
-            ReferencedContainer = "container:aRun.xcodeproj">
+            ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "aRunning.app"
+            BuildableName = "BeatRun.app"
             BlueprintName = "aRunning"
-            ReferencedContainer = "container:aRun.xcodeproj">
+            ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "aRunning.app"
+            BuildableName = "BeatRun.app"
             BlueprintName = "aRunning"
-            ReferencedContainer = "container:aRun.xcodeproj">
+            ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

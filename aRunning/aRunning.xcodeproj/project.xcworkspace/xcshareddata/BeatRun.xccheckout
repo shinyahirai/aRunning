@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5B87D41E-5F7C-46C4-BA39-B0B9CF37DF0D</string>
+	<string>FBA8C053-31AA-49E2-8CBC-AD064C9F4C64</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BeatRun</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1E53D952-3761-466C-833A-2296FB9FFE6F</key>
-		<string>https://github.com/shinyahirai/MP.git</string>
+		<key>776CBECD-A58E-48B4-800F-718C0829DF09</key>
+		<string>https://github.com/shinyahirai/aRunning.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BeatRun/BeatRun.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1E53D952-3761-466C-833A-2296FB9FFE6F</key>
+		<key>776CBECD-A58E-48B4-800F-718C0829DF09</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/shinyahirai/MP.git</string>
+	<string>https://github.com/shinyahirai/aRunning.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1E53D952-3761-466C-833A-2296FB9FFE6F</string>
+	<string>776CBECD-A58E-48B4-800F-718C0829DF09</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1E53D952-3761-466C-833A-2296FB9FFE6F</string>
+			<string>776CBECD-A58E-48B4-800F-718C0829DF09</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MP</string>
+			<string>aRunning</string>
 		</dict>
 	</array>
 </dict>
