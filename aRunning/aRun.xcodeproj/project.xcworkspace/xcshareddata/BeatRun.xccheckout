@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5B87D41E-5F7C-46C4-BA39-B0B9CF37DF0D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BeatRun</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1E53D952-3761-466C-833A-2296FB9FFE6F</key>
+		<string>https://github.com/shinyahirai/MP.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BeatRun/BeatRun.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1E53D952-3761-466C-833A-2296FB9FFE6F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shinyahirai/MP.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1E53D952-3761-466C-833A-2296FB9FFE6F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1E53D952-3761-466C-833A-2296FB9FFE6F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MP</string>
+		</dict>
+	</array>
+</dict>
+</plist>
