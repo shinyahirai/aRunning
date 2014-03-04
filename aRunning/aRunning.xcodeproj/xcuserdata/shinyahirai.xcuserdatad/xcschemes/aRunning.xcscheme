@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "656C141B18BF86640056D384"
-               BuildableName = "BeatRun.app"
+               BuildableName = "aRunning.app"
                BlueprintName = "aRunning"
                ReferencedContainer = "container:aRunning.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "656C143F18BF86640056D384"
-               BuildableName = "BeatRunTests.xctest"
+               BuildableName = "aRunningTests.xctest"
                BlueprintName = "aRunningTests"
                ReferencedContainer = "container:aRunning.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "BeatRun.app"
+            BuildableName = "aRunning.app"
             BlueprintName = "aRunning"
             ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "BeatRun.app"
+            BuildableName = "aRunning.app"
             BlueprintName = "aRunning"
             ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656C141B18BF86640056D384"
-            BuildableName = "BeatRun.app"
+            BuildableName = "aRunning.app"
             BlueprintName = "aRunning"
             ReferencedContainer = "container:aRunning.xcodeproj">
          </BuildableReference>

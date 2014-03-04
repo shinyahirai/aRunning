@@ -20,17 +20,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7p-WN-2tY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradationView.png" translatesAutoresizingMaskIntoConstraints="NO" id="fOh-Fp-aWr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vD-Lw-N29">
-                                        <rect key="frame" x="60" y="60" width="200" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vD-Lw-N29">
+                                <rect key="frame" x="60" y="60" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWK-EG-ryY">
                                 <rect key="frame" x="20" y="328" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,14 +57,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Music" id="zY5-8K-9CG"/>
                     <connections>
                         <outlet property="artistLabel" destination="bOI-QC-Sbk" id="hNI-Uc-4WS"/>
                         <outlet property="artworkImage" destination="ktZ-El-e28" id="Aos-ea-R87"/>
                         <outlet property="bpmLabel" destination="x7T-th-QnH" id="OVk-XZ-40N"/>
-                        <outlet property="gradationView" destination="F7p-WN-2tY" id="Twg-yP-EYU"/>
                         <outlet property="miniArtworkImage" destination="3vD-Lw-N29" id="pDi-IG-Xh4"/>
                         <outlet property="songPlayTimeLabel" destination="kMh-Qb-xBV" id="xWb-K3-gA8"/>
                         <outlet property="songTitleLabel" destination="YWK-EG-ryY" id="BhU-NW-Hyp"/>
@@ -89,10 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-b1-Lx1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObA-vs-Nh0">
                                 <rect key="frame" x="137" y="469" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,17 +95,41 @@
                                     <action selector="tapBtn:" destination="5XF-K3-OGX" eventType="touchUpInside" id="Oif-kN-b9w"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CuN-hi-xeU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="CBa-f6-yXD"/>
                     <connections>
-                        <outlet property="mapView" destination="e2g-b1-Lx1" id="JTU-Hj-m3P"/>
+                        <outlet property="mapBackgroundView" destination="CuN-hi-xeU" id="1a7-Ra-492"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd9-0u-Ggv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1535" y="127"/>
+        </scene>
+        <!--Graph View Controller - Graph-->
+        <scene sceneID="AIU-gU-bsW">
+            <objects>
+                <viewController storyboardIdentifier="GraphViewController" id="csg-M0-PdX" customClass="GraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qfq-sS-LZR"/>
+                        <viewControllerLayoutGuide type="bottom" id="o4v-AS-e4H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8sY-7l-s4F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Graph" id="Yt6-CM-h9B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oo1-rC-CZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="416"/>
         </scene>
         <!--Settings View Controller - 設定-->
         <scene sceneID="T9v-d4-cGv">
@@ -167,7 +183,8 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="KCM-cm-ALe"/>
                         <segue destination="5XF-K3-OGX" kind="relationship" relationship="viewControllers" id="uYQ-nd-byV"/>
-                        <segue destination="Os0-bQ-La1" kind="relationship" relationship="viewControllers" id="b6t-LQ-ySV"/>
+                        <segue destination="csg-M0-PdX" kind="relationship" relationship="viewControllers" id="q8E-Ts-VHC"/>
+                        <segue destination="Os0-bQ-La1" kind="relationship" relationship="viewControllers" id="Cjl-zX-PuK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3B-SH-Mjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,6 +211,9 @@
             <point key="canvasLocation" x="1034" y="1422"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradationView.png" width="640" height="1036"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

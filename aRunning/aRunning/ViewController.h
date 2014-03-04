@@ -23,6 +23,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *songPlayTimeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImage;
 @property (weak, nonatomic) IBOutlet UIImageView *miniArtworkImage;
-@property (weak, nonatomic) IBOutlet UIView *gradationView;
 
 @end
