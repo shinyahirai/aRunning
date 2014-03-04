@@ -216,7 +216,7 @@
     // 現在、加速度センサー無しのデバイスは存在しないが念のための確認
     if (_motionManager.accelerometerAvailable) {
         // センサーの更新間隔の指定
-        _motionManager.accelerometerUpdateInterval = 1.0;  // 100Hz
+        _motionManager.accelerometerUpdateInterval = 1.0;
         
         // ハンドラを指定
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error) {
