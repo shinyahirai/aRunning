@@ -8,7 +8,14 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController () {
+    // Google Map
+    GMSMapView* _gMapView;
+    
+    // 現在地
+    CLLocationManager* _locationManager;
+    BOOL _doFollow;
+}
 
 @end
 
@@ -26,25 +33,61 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _mapView.delegate = self;
-    _mapView.showsUserLocation = YES;
+    
+    // Google Map
+    GMSCameraPosition* camera = [GMSCameraPosition cameraWithLatitude:-33.8683
+                                                            longitude:151.2086
+                                                                 zoom:14];
+    _gMapView = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 319) camera:camera];
+    _gMapView.delegate = self;
+    _gMapView.myLocationEnabled = YES;
+    _gMapView.settings.myLocationButton = YES;
+    _gMapView.settings.compassButton = YES;
+    [self.view addSubview:_gMapView];
+    
+    // マーカーの設置
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(10.328531, 123.903545);
+    marker.title = @"La guardia";
+    marker.snippet = @"Flat Ⅱ";
+    marker.map = _gMapView;
+    
+    // 現在地
+    _locationManager = [[CLLocationManager alloc] init];
+    
+    // 位置情報サービスが利用できるかどうかをチェック
+    if ([CLLocationManager locationServicesEnabled]) {
+        _locationManager.delegate = self;
+        // 測位開始
+        [_locationManager startUpdatingLocation];
+    } else {
+        NSLog(@"Location services not available.");
+    }
 }
 
-// 現在地を中心に表示
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    _mapView.centerCoordinate = _mapView.userLocation.location.coordinate;
+// 位置情報更新時
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     
-    // 倍率の設定
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.005f, 0.005f);
-    MKCoordinateRegion region = MKCoordinateRegionMake(_mapView.userLocation.coordinate, span);
-    [_mapView setRegion:region animated:YES];
+    // マップの中心に現在地を表示
+    [_gMapView animateToLocation : [newLocation coordinate]];
     
+    //緯度・経度を出力
+    NSLog(@"didUpdateToLocation latitude=%f, longitude=%f",
+            [newLocation coordinate].latitude,
+            [newLocation coordinate].longitude);
     
-//    CLLocationCoordinate2D coords[2];
-//    coords[0] = CLLocationCoordinate2DMake(view.annotation.coordinate.latitude, view.annotation.coordinate.longitude); // 自分
-//    coords[1] = CLLocationCoordinate2DMake(35.70448, 139.87299);      // ターゲット
+    // 線の描画
+    GMSMutablePath* path = [GMSMutablePath path];
+    [path addCoordinate:CLLocationCoordinate2DMake(10.328531, 123.903545)];
+    [path addCoordinate:CLLocationCoordinate2DMake(10.318531, 123.913545)];
+    [path addCoordinate:CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)];
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+    polyline.map = _gMapView;
+}
 
+// 測位失敗時や、位置情報の利用をユーザーが「不許可」とした場合などに呼ばれる
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"didFailWithError");
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,57 +97,6 @@
 }
 
 - (IBAction)tapBtn:(id)sender {
-    // 2点の座標
-    CLLocationCoordinate2D coords[2];
-    coords[0] = CLLocationCoordinate2DMake(_mapView.userLocation.coordinate.latitude, _mapView.userLocation.coordinate.longitude);
-    coords[1] = CLLocationCoordinate2DMake(10.328531, 123.903545);
-    
-    MKPlacemark *fromPlacemark = [[MKPlacemark alloc] initWithCoordinate:coords[0] addressDictionary:nil];
-    MKPlacemark *toPlacemark = [[MKPlacemark alloc] initWithCoordinate:coords[1] addressDictionary:nil];
-    
-    MKMapItem *fromItem = [[MKMapItem alloc] initWithPlacemark:fromPlacemark];
-    MKMapItem *toItem   = [[MKMapItem alloc] initWithPlacemark:toPlacemark];
-    
-    // MKMapItem をセットして MKDirectionsRequest を生成
-    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
-    request.source = fromItem;
-    request.destination = toItem;
-    request.requestsAlternateRoutes = YES;
-    request.transportType = MKDirectionsTransportTypeWalking;
-    
-    // MKDirectionsRequest から MKDirections を生成
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
-    
-    // 経路検索を実行
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
-     {
-         if (error) return;
-         
-         if ([response.routes count] > 0)
-         {
-             MKRoute *route = [response.routes objectAtIndex:0];
-             NSLog(@"distance: %.2f meter", route.distance);
-             
-             // 地図上にルートを描画
-             [self.mapView addOverlay:route.polyline];
-         }
-     }];    
 }
 
-// 地図上に描画するルートの色などを指定（これを実装しないと何も表示されない）
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView
-            rendererForOverlay:(id<MKOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[MKPolyline class]])
-    {
-        MKPolyline *route = overlay;
-        MKPolylineRenderer *routeRenderer = [[MKPolylineRenderer alloc] initWithPolyline:route];
-        routeRenderer.lineWidth = 5.0;
-        routeRenderer.strokeColor = [UIColor redColor];
-        return routeRenderer;
-    }
-    else {
-        return nil;
-    }
-}
 @end

@@ -39,8 +39,6 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:168/255.0f green:213/255.0f blue:165/255.0f alpha:1.0f];
-
     //ミュージックプレイヤー
     _musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
     _musicPlayer.currentPlaybackRate = 1;
@@ -73,7 +71,7 @@
     _circularSlider.handleColor = _circularSlider.filledColor;
     _circularSlider.lineWidth = 4;
 
-    [_gradationView addSubview:_circularSlider];
+    [self.view addSubview:_circularSlider];
     
     // タッチアップイベント取得によってタイマーとの共存
     // valueChangedでは両方が交互に反応し合ってしまうため応急処置
@@ -89,7 +87,9 @@
     _motionManager = [[CMMotionManager alloc] init];
 
     
-    [UITabBar appearance].barTintColor = [UIColor colorWithRed:168.0f/255.0f green:213.0f/255.0f blue:165.0f/255.0f alpha:1.0f];
+//    [UITabBar appearance].barTintColor = [UIColor colorWithRed:168.0f/255.0f green:213.0f/255.0f blue:165.0f/255.0f alpha:1.0f];
+    [UITabBar appearance].barTintColor = [UIColor colorWithRed:0.294118 green:0.980392 blue:0.729412 alpha:1.0f];
+
     _appDelegate = [[UIApplication sharedApplication] delegate];
     
     
@@ -100,28 +100,28 @@
     longPressGesture.minimumPressDuration = 1.0f;
     [self.view addGestureRecognizer:longPressGesture];
     
-    // グラデーションビューの設定
-    float width = _gradationView.frame.size.width, height = _gradationView.frame.size.height;
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-    size_t numOfComponent = 2;
-    CGFloat locations[2] = {0.0, 1.0};
-    CGFloat components[8] = {
-        168.0f/255.0f, 213.0f/255.0f, 165.0f/255.0f, 0.9f,
-        255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f, 0.9f
-    };
-    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, numOfComponent);
-
-    // 制作したグラデーション内容で画像を生成する
-    CGContextDrawLinearGradient(bitmapContext, gradient, CGPointMake(0, 0), CGPointMake(0, height), 0);
-    CGImageRef imageRef = CGBitmapContextCreateImage(bitmapContext);
-    UIImage* image = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
-    CGContextRelease(bitmapContext);
-    CGColorSpaceRelease(colorSpace);
-    
-    // 生成したグラデーション画像を背景に指定する。
-    _gradationView.backgroundColor = [UIColor colorWithPatternImage:image];
+//    // グラデーションビューの設定
+//    float width = _gradationView.frame.size.width, height = _gradationView.frame.size.height;
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+//    size_t numOfComponent = 2;
+//    CGFloat locations[2] = {0.0, 1.0};
+//    CGFloat components[8] = {
+//        168.0f/255.0f, 213.0f/255.0f, 165.0f/255.0f, 0.9f,
+//        255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f, 0.9f
+//    };
+//    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, numOfComponent);
+//
+//    // 制作したグラデーション内容で画像を生成する
+//    CGContextDrawLinearGradient(bitmapContext, gradient, CGPointMake(0, 0), CGPointMake(0, height), 0);
+//    CGImageRef imageRef = CGBitmapContextCreateImage(bitmapContext);
+//    UIImage* image = [UIImage imageWithCGImage:imageRef];
+//    CGImageRelease(imageRef);
+//    CGContextRelease(bitmapContext);
+//    CGColorSpaceRelease(colorSpace);
+//    
+//    // 生成したグラデーション画像を背景に指定する。
+//    _gradationView.backgroundColor = [UIColor colorWithPatternImage:image];
     
     // 曲が流れていれば情報取得
     [self getCurrentMusicInfoAndView];

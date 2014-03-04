@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+@interface MapViewController : UIViewController <CLLocationManagerDelegate,GMSMapViewDelegate>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
-
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (weak, nonatomic) IBOutlet UIView *mapBackgroundView;
 - (IBAction)tapBtn:(id)sender;
 @end
