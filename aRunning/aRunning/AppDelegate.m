@@ -8,11 +8,36 @@
 
 #import "AppDelegate.h"
 
+//@interface AppDelegate () <CLLocationManagerDelegate>
+//
+//@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [GMSServices provideAPIKey:@"AIzaSyC-ALMvVw4VU9iCe7Hfs1Il5ZfW7VY-3Sc"];
+    
+    // Manager
+//	if(_locationManager == nil)
+//	{
+//		_locationManager = [[CLLocationManager alloc] init];
+//	}
+//    
+//    _locationManager.delegate = self;
+//    
+//    UIViewController *controller = (UIViewController *)self.window.rootViewController;
+//    
+//    // ViewController
+//    MapViewController *mapViewController = (MapViewController *)controller;
+//
+//    _locationManager.delegate = mapViewController;
+//	_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//	_locationManager.distanceFilter = 5.0f;
+//    
+//	[_locationManager startUpdatingLocation];
+    
+    
     return YES;
 }
 							

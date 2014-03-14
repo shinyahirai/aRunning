@@ -11,11 +11,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreMotion/CoreMotion.h>
-#import <CoreLocation/CoreLocation.h>
 #import "EFCircularSlider.h"
 #import "AppDelegate.h"
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *bpmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;

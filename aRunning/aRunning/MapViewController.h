@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
+#import "AppDelegate.h"
+
 @interface MapViewController : UIViewController <CLLocationManagerDelegate,GMSMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *mapBackgroundView;
+@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
 - (IBAction)tapBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)SegChanged:(id)sender;
+
+@property (nonatomic,retain) GMSMapView* gMapView;
+
 @end

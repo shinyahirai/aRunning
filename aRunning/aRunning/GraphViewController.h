@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "CorePlot-CocoaTouch.h"
+#import "AFNetworking.h"
 @interface GraphViewController : UIViewController <CPTPlotDataSource,CPTPlotDelegate>
-
-@property(nonatomic, strong) CPTXYGraph *barChart;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
 
 @end

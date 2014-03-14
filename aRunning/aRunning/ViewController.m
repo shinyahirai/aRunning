@@ -21,12 +21,7 @@
     NSTimer* _seekSliderTimer;
     CGPoint _tBegan, _tEnded;
     UISwipeGestureRecognizer* _swipe;
-    
-    AppDelegate* _appDelegate;
-    
-    // Core Location
-    CLLocationManager* _locationManager;
-    
+        
     // Core Motion
     CMMotionManager* _motionManager;
 }
@@ -83,21 +78,17 @@
     _songTitleLabel.text = @"曲が選択されていません";
     _artistLabel.text = @"";
     _bpmLabel.text = @"";
-    _locationManager = [[CLLocationManager alloc] init];
+    
     _motionManager = [[CMMotionManager alloc] init];
 
-    
-//    [UITabBar appearance].barTintColor = [UIColor colorWithRed:168.0f/255.0f green:213.0f/255.0f blue:165.0f/255.0f alpha:1.0f];
     [UITabBar appearance].barTintColor = [UIColor colorWithRed:0.294118 green:0.980392 blue:0.729412 alpha:1.0f];
-
-    _appDelegate = [[UIApplication sharedApplication] delegate];
     
     
     // 長押し検知で曲のリスト作成
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc]
                                                       initWithTarget:self
                                                       action:@selector(handleLongPressGesture:)];
-    longPressGesture.minimumPressDuration = 1.0f;
+    longPressGesture.minimumPressDuration = 0.5f;
     [self.view addGestureRecognizer:longPressGesture];
     
 //    // グラデーションビューの設定
@@ -125,7 +116,6 @@
     
     // 曲が流れていれば情報取得
     [self getCurrentMusicInfoAndView];
-    [self startLocationMonitoring];
     [self coreMotion];
 
     NSLog(@"nowint = %d",_nowInt);
@@ -133,9 +123,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSLog(@"_appDelegate = %d",_appDelegate.ageInt);
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    NSLog(@"_appDelegate = %d",appDelegate.ageInt);
     // Heart Rate maxを年齢から算出
-    _hrmax = 210 - _appDelegate.ageInt / 2;
+    _hrmax = 210 - appDelegate.ageInt / 2;
     NSLog(@"hrmax = %d",_hrmax);
     
     // 運動強度が50 ~ 60%の場合
@@ -206,8 +197,6 @@
 
 #pragma mark - Core Motion
 - (void)coreMotion {
-    // インスタンスの生成
-//    CMMotionManager *manager = [[CMMotionManager alloc] init];
     
     // dispatch
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
@@ -236,6 +225,7 @@
             });
         };
         
+        
         // センサーの利用開始
         [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
         
@@ -244,27 +234,6 @@
 //            [manager stopAccelerometerUpdates];
 //        }
     }
-}
-
-#pragma mark - Core Location
--(void)startLocationMonitoring
-{
-	if(_locationManager == nil)
-	{
-		_locationManager = [[CLLocationManager alloc] init];
-	}
-	_locationManager.delegate = self;
-    
-	_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-	_locationManager.distanceFilter = 5.0f;
-    
-	[_locationManager startUpdatingLocation];
-}
-
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-	NSLog(@"%@",newLocation.timestamp);
 }
 
 #pragma mark - Touch Event
